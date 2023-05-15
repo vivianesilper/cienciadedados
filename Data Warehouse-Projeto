@@ -1,0 +1,870 @@
+
+
+
+
+Universidade Presbiteriana Mackenzie 
+
+
+Pró-Reitoria de Pesquisa e Pós-graduação
+
+Faculdade de Computação e Informática
+
+
+Pós-Graduação Lato Sensu 
+
+
+
+
+
+
+
+
+Abrangendo metodologias para implantação de Data Warehouse
+     a partir de suas ferramentas de armazenamento e modelagem dos Dados
+
+
+
+
+
+
+
+
+
+
+
+Viviane da Silva Pereira
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fortaleza
+
+2023
+
+Viviane da Silva Pereira
+
+
+
+
+
+
+
+
+
+
+
+
+Abrangendo metodologias para implantação de Data Warehouse
+     a partir de suas ferramentas de armazenamento e modelagem dos Dados
+
+
+
+
+
+Trabalho de Aplicação de Conhecimento apresentado ao Curso de Pós-Graduação em Ciência de Dados – 
+BigData Analytics da Universidade Presbiteriana Mackenzie para a obtenção do título de Especialista em Ciência de Dados 
+– Big Data Analytics.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Orientador: Prof. Ms. Vladimir Aparecido Esteves
+Fortaleza
+
+2023
+
+Resumo
+
+Atualmente com o mercado competitivo e com inúmeras inovações, trazem consigo opções de múltiplas escolhas é preciso adquirir meios e possibilidades de melhorar suas áreas de atuação e desenvolvimento e capacitação, utilizando as melhores ferramentas. A empresa visionou a implantação da ferramenta Data Warehouse como impulsionadora e ampliadora do seu ramo de atuação, e desenvolvendo-se a necessidade de buscar a ferramentas no mercado da tecnologia em softwares, que oferece inúmeras ferramentas de Data Warehouse, e tendo como base e fundamentação através de pesquisas, preferências de usuários e profissionais de TI, com apoio bibliográfico, de livros teses e dissertações, tendo encontrando alguns softwares com a tecnologia de Data Warehouse que extrai, transforma, carrega e armazena os dados, transformando esses dados em informações extremamente importantes para a empresa que ousou ampliar seu capital financeiro introduzindo no seu portifólio de serviços o ramo de “web crawling”, obteve a predição de aumentar sua estrutura em capacidade computacional, optando entre várias ferramentas disponíveis  por descrever cinco ferramentas populares e versáteis, algumas populares por  Open Source (código aberto), gratuitas e híbridas de acordo com o serviço que adquirir, tem-se um valor de custeio. Destacando-se Amazon Redshift, Microsoft Azure, Google BigQuery, Snowflake e PostgreSQL. Concluída análise optando pelas ferramentas Amazon Redshift e PostgreSQL trazendo opções muito relevantes para crescimento do ramo definido pela empresa.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Palavras-chave: Data Warehouse, TI, Web Crawling, Open Source, Amazon Redshift, Microsoft Azure, Google BigQuery, Snowflake, PostgreSQL.
+
+
+
+
+
+
+
+SUMÁRIO
+
+
+
+INTRODUÇÃO .............................................................................................................
+6
+
+1	RELATÓRIO DA SITUAÇÃO.........................................................................     7
+1.1	A empresa............................................................................................................
+8
+
+1.2	Desafio..................................................................................................................
+
+8
+
+1.3	Os sintomas ........................................................................................................
+
+9
+
+1.4	Objetivo ..............................................................................................................
+
+9
+
+
+2	DIAGNÓSTICO..................................................................................................     10
+
+2.1	As informações ...................................................................................................
+
+10
+
+2.2	Análise e diagnóstico .........................................................................................
+
+17
+
+3	SOLUÇÃO..........................................................................................................                                      
+
+19
+
+3.1	Propostas de Solução .........................................................................................
+
+19
+
+3.2	Conexão Proposta com os Resultados Esperados ...........................................
+
+24
+
+
+4	PLANEJAMENTO..............................................................................................    26
+
+4.1	Planos de ações ....................................................................................................
+
+26
+
+
+5	CONSIDERAÇÕES FINAIS.............................................................................
+
+
+29
+
+REFERÊNCIAS ............................................................................................................          
+
+  30
+
+
+
+
+
+
+
+
+
+
+LISTA DE QUADROS  
+
+
+Quadro 1 – Implementação do Data Warehouse utilizando o software PostgreSQL.
+   27
+
+Quadro 2 – Implementação do Data Warehouse Amazon Redshift...........................
+
+29
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LISTA DE FIGURAS 
+
+     Figura 1 - Fluxo de dados por meio de arquitetura do Data Warehouse..................  14
+    Figura 2 - Arquitetura de Data Warehouse do Amazon Redshift.............................  15
+    Figura 3 - Arquitetura Microsoft Azure com nó único...............................................  16  
+    Figura 4 – Arquitetura Google Cloud no BigQuery em lotes e streams...................   17  
+    Figura 5 – Arquitetura Data Warehouse Snowflake..................................................   18
+    Figura 6 - Análise SWOT.............................................................................................    24
+
+
+INTRODUÇÃO 
+
+       Discute-se a necessidade de expansão da empresa que foca em aperfeiçoar resultados, no avanço da melhoria e qualidade dos seus serviços. Surge o conceito de buscar maiores conhecimentos na área de tecnologia sobre novas ferramentas de Data Warehouse utilizadas na capitação, armazenamento, análise e modelagem dos dados, que precisam ser trabalhados para que possam tornar-se informações agregando valor na conquista de novos mercados
+       Atualmente com o mundo “Big Data” bastante aquecido com milhões de informações que circulam o mundo inteiro em segundos, o que fazer para usar tudo isso em benefício da empresa em geral, que ferramentas utilizar para capitar esses dados, como coletar bons dados, e organizá-los e armazenar com segurança, informações tão importantes. Hoje as empresas não trabalham mais para gerar e implantar informações nos sistemas em extensas planilhas que tem o processo de tomada de decisão mais demorado, aumentando seus custos. com o mundo empresarial altamente competitivo onde “tempo é dinheiro” (autor desconhecido), já dizia um velho ditado. 
+       Com tantas ferramentas que auxiliam no acesso rápido a informação aumentam as chances de uma melhor tomada de decisão, auxiliam executivos, gerentes e analista  de “Business Intelligence”, traz consigo, uma explosão de softwares, sistemas de gerenciamento de negócios, gerenciamento de banco de dados onde todos estruturados a partir da necessidade da empresa, auxiliam no processo de tomada de decisão.Com essas ferramentas é possível gerar relatórios com novas visões, ou seja, a abertura de uma amplitude de informações obscuras até então, transformando o conhecimento antes tácito em tangível. 
+       Como a maioria dos sistemas não são modelados e preparados para armazenar informações decisórias ou estratégicas nas empresas, surge à necessidade de uma base histórica para as tomadas de decisões, onde podemos centralizar todas as informações coletadas denominado Data Warehouse (DW) ou Armazém de Dados. O Data Warehouse integra os dados internos e externos de uma organização, proporcionando assim, a conectividade do mundo virtual com o dos negócios.
+       Conhecer o processo que abrange a implementação do Data Warehouse, pesquisar suas funcionalidades para cada necessidade específica de uso por área de atuação da empresa.
+Descrever sobre gestão da informação, estudar e compreender Data Warehouse,
+pesquisando ferramentas e formas de desenvolvimento de uma solução para a armazenamento de dados coletados no processo de “web crawling” (raspagem de dados).                                 
+               
+       Inicialmente definir o que são dados reconhecer a sua importância no mercado de “Business Intelligence” relacioná-los com Data Warehouse a ferramentas adiciona esses dados e os armazena para serem analisados e modelados de acordo com os critérios organizacionais, após realizado o processo de “web crawling”. Manipular esses dados com base nos treinamentos realizados na implantação da ferramenta para minimizar os erros e garantir a eficiência no seu uso. Relacionando e informando os resultados no período de implantação para o Lider de TI responsável em administrar as ocorrências na fase inicial.
+      Resumir as ferramentas de “Data Warehouse” oferecidas pelo mercado, e especificar suas características e funcionalidades.
+	E por fim registrar a transformação do conhecimento ocorrido no decorrer de todo o processo de pesquisa, com apresentação de cinco ferramentas de Data Warehouse com suas devidas figuras de suas arquiteturas destacando-se: “Amazon Redshift”, “Microsoft Azure”, “Google BigQuery”, “Snowflake” e “PostgreSQL”. Concluída análise optando pelas ferramentas “Amazon Redshift” e “PostgreSQL” trazem ferramenta de DW de código aberto bastante popular que armazena, integra e analisa dados usando recursos unificação e instrumentos de análise. Os procedimentos e funções podem ser criados em várias linguagens de programação, “PL”, “pgSQL”, “Python” etc.
+       Neste trabalho interpreta-se as diferenças e conceitos sobre os dados, conhecimento e informação. Inferir a definição de Data Warehouse, suas características, aplicações e como implementá-lo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1         RELATÓRIO DA SITUAÇÃO
+
+        Os tópicos abaixo apresentam o que será descrito no projeto: A empresa e o desafio que são os campos referidos nos tópicos abaixo cuja pesquisa deste projeto objetiva resolver e os sintomas que antecedem a implantação do sistema de Data Warehouse na empresa ampliando as oportunidades de resolução com mais rapidez na solução de armazenamento de seus dados depois de coletados. Demonstrar todo o processo de pesquisa que foi abordado acima, sendo explanado no decorrer do projeto.
+      
+1.1  A empresa
+
+             NMG Soluções Digitais LTDA, 2019 é uma empresa brasileira com sede em Fortaleza atua no setor de Tecnologia de Softwares, cujo foco é venda de soluções tecnológicas para os ramos financeiro e de automação comercial. Uma empresa jovem, com pouco 4 anos de atuação no mercado, mas com capital humano de extremo valor, com milhões de acessos mensais.
+       Temos imensa satisfação em desenvolver softwares de altíssima performance e de montar estruturas na nuvem capazes de integrar resultados com precisão, qualidade, performance, segurança, estabilidade e resiliência. 
+       Já trabalhamos com data mining e “machine learning”, e estamos atualmente ampliando nossos serviços, implantando o desenvolvimento de serviços de “web crawling”, robôs que varrem a internet buscando consolidar a informação, para que possamos extrair inteligência dos dados coletados e ajudar nossos clientes, oferecendo os melhores insights de acordo com o seu ramo de atuação.
+1.2 Desafio
+
+              Dados como eles podem tornar a empresa mais competitiva e segura no mercado de softwares, baseado no seu ramo de atuação. Um problema comum nas empresas é a inconsistência de dados entre diferentes setores. Por exemplo, a área de marketing registra um total de vendas diferente do que foi verificado pelo setor financeiro, o que gera confusões e retrabalhos nas análises desses números. Isso ocorre porque os dados de uma organização, normalmente, provêm de vários canais, tanto internos quanto externos. No entanto, o emprego de “Data Warehouse” diminui ou até mesmo elimina esse tipo de problema, pois obtém e unifica os dados dessas fontes. Dessa forma esse trabalho pretende usar a tecnologia de Data Warehouse associada ao “PostgreSQL” para apoiar a tomada de decisão.                                                                                                                                        
+1.3 Os sintomas
+
+       Devida a necessidade de evitar erros na consolidação, e unificação de seus dados, para posteriormente filtrá-los e usá-los conforme for conveniente para a empresa, e, a diversidade de softwares oferecidos no mercado, qual a melhor escolha em relação a custo, pois a empresa está ampliando seu ramo de serviços e incluirá o “web crawling” no seu portifólio de serviços, qual o melhor “Data Warehouse” existente no mercado de softwares que irá se encaixar nessa necessidade da empresa, pensando no desempenho, velocidade, latência e tempo de execução
+1.4      Objetivo
+           
+             Abranger as ferramentas e métodos disponíveis atualmente no mercado de softwares para implantação do Data Warehouse, abordar uma rápida definição de dados, e através de uma literatura mais especializada definir o que é Data Warehouse e centralizar essas informações coletadas de várias fontes para essa definição. Com o propósito de resolver os seguintes pontos para instalação do Data Warehouse:
+* Várias plataformas de softwares disponíveis no mercado, pesquisar as melhores.
+* A ferramenta mais adequada para receber uma grande quantidade de dados.
+* Identificar qual ferramenta e mais viável em relação a desempenho e custo.
+* Buscar qual ferramenta tem o menor tempo de latência no recebimento dos dados.
+* Realizar uma análise SWOT das ferramentas indicadas nas propostas de solução.
+    
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                           
+2         DIAGNÓSTICO
+
+             Apresenta-se neste capitulo descrição sobre conceitos de dados, informações e conhecimentos, qual a importância da sua integridade na captação das informações que são relevantes para empresa e considerações relacionadas à Data Warehouse encontradas na literaturas, foi utilizado o método de pesquisa qualitativa e as diversidades de softwares disponíveis no mercado e especificar cada ferramenta de acordo com a sua funcionalidade na empresas em geral, obter dados que descrevam como é realizada a coleta desses dados dentro da ferramenta e, quais métodos instaurar por meio de scripts. Os scripts são “roteiros” seguidos por sistemas computacionais e trazem informações que são processadas e transformadas em ações efetuadas por um programa de computador que são instaurados na implantação do software.
+               Deve-se instaurá-los para que o processo de coleta e armazenamento seja seguido corretamente para adquirir dados coesos como todo, e não haja discrepância nas informações no momento do carregamento e disponibilizados para o fim que se destina e posteriormente serem descartados ou ser novamente armazenados no Dara Warehouse a espera de um novo ciclo de trabalho.
+
+2.1      As informações
+	Dados, Informações e Big Data 
+      Vivemos em uma época que bons dados estruturados são muito importantes agregam conhecimento, e este por sua vez, traz soluções e respostas a tudo que está a nossa volta e nos ajuda na tomada de decisão.
+              Defino dado por tudo que nós cerca quando nos conta sobre algo, um caractere uma letra um símbolo ou uma imagem; um like, emoji, foto, sons gravados ou uma localização. Dado é menor unidade ou elemento de uma informação. Os dados em seu formatado original chamamos de dados brutos, sem muito valor a princípio. Para eles se tornarem mais importantes precisam passar por uma transformação, na qual chamamos esse processo de “Business Intelligence” (BI), como os softwares de “Extract Transformation Load” (ETL), “Power Bi “e outros fazem esse tratamento, porém não fazem parte da temática desse projeto. 
+             O termo “Big Data” é recente, surgiu em 1997, para nomear conjuntos de dados ordenados, dados multivariados e de elevada dimensão, geralmente criados em tempo real; e apresentam um crescimento exponencial (na escala temporal), nomeados “megadados”. Com o surgimento da internet, a quantidade de dados aumentou. A popularização da “internet das coisas” (Iot), saímos da era do “terabyte” para o “petabyte” e a partir de 2015 entramos na era do “zetabyte”. E tem como seu principal componente de “Business Intelligence” o “Data Warehouse”, software onde todos esses dados serão armazenados depois do processo de ETL, com a previa definição pelo departamento de planejamento da empresa, de quais dados serão extraídos, tratados e carregados de usas respectivas fontes.
+             Define-se Data Warehouse, são repositórios centrais que armazenam dados de uma ou mais fontes heterogêneas. Armazéns de dados são ferramentas analíticas construídas para apoiar a tomada de decisões para usuários de relatórios em vários departamentos, o Data Warehouse torna-se uma biblioteca de informações que podem ser recuperadas e analisadas para uma melhor tomada de decisão. Trabalha para criar um sistema único e unificando os dados, como repositório central ele armazena os metadados. (ACERVO LIMA, 2022)
+              
+               Figura 1 – Fluxo de dados por meio de arquitetura do Data Warehouse 
+     Fonte:  ACERVO LIMA, 2022
+       Atualmente com a expansão da tecnologia em nuvem reduziu-se o esforço e custos na construção de armazenamento de dados para as empresas. Com isso os Data Warehouse estão                                                                                                                                    deixando de ser data centers físicos para Data Warehouse baseados em nuvens. Algumas organizações ainda operam de forma tradicional, mas o futuro do armazenamento está computação em nuvem.
+          Existem várias ferramentas disponíveis no mercado, algumas com armazenamento de dados em nuvem ou híbrida. Portanto, cabe a empresa identificar qual a melhor solução de acordo com os seus requisitos para implantação do seu sistema de armazenamento de dados. A seguir cinco ferramentas e suas devidas características, porém existem outras ferramentas disponíveis no mercado.
+Amazon Redshift
+            Amazon Redshift é uma das ferramentas de DW mais classificadas por usuários online. E como o nome sugere, Redshift faz parte dos serviços de web, um data Warehouse em escala de petabytes totalmente gerenciado baseado em nuvem pela Amazon Company. Iniciando com gigabytes de dados e escala para petabytes ou mais. Se integra a diversas ferramentas de ETL (Extração, Transformação e Carregamento), além de ferramentas de BI (Business Intelligence). Isso permite o uso de dados para acumular novos insights para empresas e clientes. (ACERVO LIMA, 2022)
+       Caracteriza-se por: Automatizar tarefas administrativas, como gerenciar, monitorar e dimensionar o data Warehouse. E permite a execução de consultas não estruturadas, o que otimiza o tempo, conforme mostrado na figura a seguir.
+                                                                                                                                               
+             Figura 2 - Arquitetura de Data Warehouse do Amazon Redshift                                                                     
+                                                                                                                                                                                                                                                                                                                                                                             
+
+Fonte: DOCS.AWS.AMAZON, 2023.
+       
+       O principal componente da arquitetura de um data warehouse do Amazon Redshift é o “cluster”, composto por um ou mais nós de computação. O serviço permite que analistas executem consultas em questão de segundos, isso porque a ferramenta continua atualizando o pool de dados, justamente para que as conexões possam ser reutilizadas ao reaplicar ao informações de drives com falhas e substituindo-as quando necessário. (DOCS.AWS.AMAZON, 2023).
+Microsoft Azure
+       Lançada pela Microsoft em 2010, Azure é uma plataforma de computação em nuvem pública que oferece infraestrutura como serviço (IaaS), plataforma como (PaaS) e o software como serviço (SaaS), é um provedor de serviços de computação em nuvem para construir, testar, implementar e gerenciar aplicativos e serviços por meio de data centers gerenciados pela Microsoft.                                                                                                                                      
+       O Azure oferece mais de 200 produtos e serviços em nuvem, como análise de Dados, Computação Virtual, Armazenamento, Rede Virtual, Gerenciador de Tráfego da Internet, Sites, Serviços de Mídia, Serviços Móveis, Integração etc. O Azure oferece conexões cruzadas, incluindo redes virtuais (VPNs), caches, redes de entrega de conteúdo (CDNs) e conexões ExpressRoute para melhorar a usabilidade e o desempenho. Fornece uma base segura em toda a infraestrutura física e segurança operacional com serviço de hospedagem na web gerenciado que ajuda na construção de aplicativos e serviços e APIs Restful da web. 
+       Como seus aplicativos mais populares as máquinas virtuais ou contêiners, oferece uma variedade de planos que visa atender requisitos de qualquer aplicativo desde pequenos até em escala global. (ACERVO LIMA, 2022).
+       
+               
+
+
+
+
+              Figura 3 - Arquitetura Microsoft Azure com configuração de nó único
+          
+ 
+Fonte: LEARN.MICROSOFT.COM, 2023.
+                                                                                                                                                                          
+Google BigQuery
+       O BigQuery é um data warehouse corporativo econômico e complemente sem servidor oferecida pelo Google. Com serviços de “machine learning” e “BI “integrados que funcionam em várias nuvens e escalonamento de acordo com os dados. Pode-se criar dados estruturados, semiestruturados e não estruturados em escala global diretamente no BigQuery. Usa-se SQL simples em suas consultas. É eficiente para gerar insights através das informações coletadas., seu sistema interativo de indexação do Big Query permite consultas muito rápidas e completas, torna-se interessante para empresas que utilizam seus próprios dados e que lidam com diversos tipos de gerenciamento de dados ente suas equipes. Os dados podem ser analisados em tempo real para obter informações atualizadas,
+ Permite analisar petabytes de dados em uma velocidade eficiente, além de possuir uma ótima relação entre custo e benefício (CLOUD.GOOGLE.COM, 2023).
+	
+	
+Figura 4 - Arquitetura Google Cloud no BigQuery em lotes e streams
+
+Fonte: CLOUD.GOOGLE.COM, 2023
+
+Snowflake
+       Uma plataforma baseada em armazenamento de dados baseado em nuvem construído sobre os Amazon Web Services ou a infraestrutura de nuvem do Microsoft Azure, oferece
+serviços para dados estruturados e semiestruturados com o poder de computação dinâmico e escalonável, eficiente e de fácil manuseio, e combinados a um mecanismo de consulta SQL com cobranças baseadas estritamente no seu uso, sua arquitetura permite armazenamento e a computação sejam escalonados separadamente, portanto os clientes podem usar e pagar pelo serviço individualmente.
+       Sua nuvem possui natureza elástica, o que significa que uma grande quantidade de dados pode ser armazenada e várias consultas pode ser executada simultaneamente. O recurso possibilita que dados estruturados e semiestruturados combinados podem ser carregados no banco de dados em nuvem sem se tornar uma categoria fixa. (ACERVO LIMA, 2022).
+       	
+        
+             Figura 5 - Arquitetura Data Warehouse Snowflake
+      
+Fonte: SNOWFLAKE.COM, 2023
+
+PostgreSQL
+       É um sistema de gerenciamento banco de dados de código aberto mais avançado e flexível, que pode servir como banco relacional simples ou de séries temporais e até mesmo como uma solução para armazenamento de dados eficiente e de baixo custo. Pode-se integrá-lo a várias ferramentas e aplicativos externos para mineração de dados e relatórios. Extremamente estável, apoiado por mais de vinte anos de desenvolvimento comunitário que contribui para altos níveis de resiliência, integridade e correção, os procedimentos e as funções podem ser criados em várias linguagens de programação, como “PL”, “pgSQL”, “Python” etc.
+             
+
+
+
+
+
+
+
+
+
+                                                                                                                                                   
+               Figura 6 – Arquitetura do Data Warehouse PostgreSQL
+
+Fonte: POSTGRESQL.ORG, 2023
+
+ 2.2      Análise e diagnóstico
+       De posse de todas as informações coletadas, podemos afirmar que os Data Warehouses, seguem algumas características importantes para embasar a fundamentação de sua escolha de acordo com a necessidade e robustez dos dados a serem modelados pela empresa.
+ E resumindo existem várias abordagens para projetar um Data Warehouse, seguem algumas      características que podem ajudar no momento escolha, que proporcionem um ganho de alto nível empresarial. (COSTA E SANTOS, 2017)
+*  Armazenamento e integração flexível, incluindo dados internos e externos às organizações:
+*  Elevado desempenho com respostas em real-time;
+*  Elevada escalabilidade a um custo reduzido através de hardware comum;
+*  Procedimento de dados altamente distribuído;
+*  Cargas de trabalho complexas (exemplo: consultas de queries ah hoc, execução de modelos de Data Mining em grandes volumes de dados). 
+Obtém-se alguns benefícios:
+*  Separação do processamento analítico dos bancos de dados transacionais;
+* Diminuição do trabalho manual;
+* Redução de burocracia e custos;
+* Vantagem competitiva.
+             O Data Warehouse tornou-se imprescindível em um mercado que trabalha coletando dados em tempo real, e apresentar informações de modo consistente, adaptar-se as mudanças, proteger e controlar os dados e às informações que eles geram, subsidiar a tomada de decisão e ser aceita pelos usuários obtendo insights rápidos e destacando-se no mercado. E quando falamos em “web crawling” e extremamente necessário um DW robusto. Pode-se adquirir a forma híbrida, estamos falando em coleta, armazenamento e modelagem e uso dos dados em nuvem ou in memória, ambos deixarão a empresa mais capacitada no mercado para atingir seus objetivos no ramo que escolher atuar. Com as características montadas fica fácil fazer uma escolha que atenda a todos os seus requisitos que serão discutidos no capítulo a seguir (KIMBALL ROSS, 2002).
+
+
+
+
+
+
+
+
+
+3         SOLUÇÃO
+
+	Depois de todos os dados coletados e apresentados, a ferramenta PostgreSQL como primeira escolha conforme foi mencionada no início do projeto, devido a sua robustez sendo um  software de baixo custo, sendo descrito na proposta de solução A, e posteriormente o software Amazon Redshift como proposta B, segue abaixo de forma detalhada a descrição de cada uma enfatizando o retorno suas características e retorno do investimento a ser realizado, a velocidade e os benefícios que a utilização das ferramentas proporcionam, a satisfação da diretoria da empresa na busca de melhores resultados na implementação do Data Warehouse e também seu software de manipulação dos dados.
+
+3.1       Propostas de solução
+             Dentre as ferramentas de Data Warehouse escolhidas para desenvolver-se o ambiente seguem as que entram em conformidade com as necessidades da empresa que amplia atualmente seus serviços oferecidos aos seus clientes, com a inserção do “web crawling”, em seu portifólio de serviços como forma de agregar valor à empresa, clientes e parceiros, como instrumento                                                                                                           tomada de decisão em seus negócios que abrangem vários nichos de atuação.
+   
+>  Proposta A: Implantação do Data Warehouse utilizando o software PostgreSQL
+ 
+> Descrição da proposta: Tendo como objetivo construir o sistema de Data Warehouse com PostgreSQL, a ferramenta necessita ser inserida com segurança oferecendo capacitação dos participantes do projeto de implantação, sendo os mesmos definidos pela empresa, faz-se necessário conhecimentos prévios na área de tecnologia, para fácil entendimento do que o projeto vai abranger, a instalação e adequação do ambiente, abrangendo todos os outros setores da empresa impedindo e sanando o problema da falta de integridade e coesão dos dados coletados no processo de “web crawling”, mantendo essa ligação através de clusters, distribuídos em seus devidos departamentos (WORSLEY, 2002).
+A instalação desse cluster será de forma que suporte a adaptação de todos os envolvidos no projeto as áreas de: TI, Marketing, Designer e Publicidade. Feito toda a parte de instalação, configuração, atualização por um profissional DBA, deve aplicar consultorias e monitorias auxiliando na efetivação do Data Warehouse PostgreSQL, no período de instalação.
+
+> Possíveis impactos:  A priori devida a falta de convivência e experiência com a ferramenta 
+é fundamental a incrementação de scripts de manipulação do banco de dados para que as informações sejam acrescentadas de forma gradual e coerente na modelação dos seus dados, e desde o início, seja feito de forma correta evitando retrabalhos desnecessários e que no futuro o profissional DBA (Administrador de banco de dados), possam trabalhar de forma a saber que dados está manipulando. O PostgreSQL suporta de forma eficiente grandes volumes de dados em suas tabelas, algumas maiores do que a capacidade de tamanho de arquivo fornecida por outros sistemas operacionais. Daí a importante definição de como realizar a manipulação dos dados, evitando dados irrelevantes mesmo com toda a capacidade que a ferramenta oferece.
+
+> Prós:        :               O PostgreSQL um servidor SGBD de grande potencial e confiabilidade, bastante conhecido para desenvolvimento, de código aberto, com Banco de Dados relacionais e de fácil manipulação suas licenças são para uso gratuito, permite a estudantes e empresas utilizarem o software sem aumentar seus custos ao extremo. A versão mais recente e estável é a 15.2,
+ oferece pacote de dados para instalação em vários sistemas operacionais como: “Linux”, “Mac”, “Windows”, “Unix”. Diminuição dos custos de instalação pois o PostgreSQL é um servidor SGBD de grande potencial e de código aberto, suas licenças de instalação uso são gratuitas, a empresa não necessita desembolsar altos valores para instalar a ferramenta. Oferece tamanho máximo de colunas por tabela – de 250 a 1.600, dependendo dos tipos de dados utilizados, maior controle na criação e exclusão de objetos no momento da modelagem dos dados, novas otimizações para várias operações SQL, uma linguagem bastante utilizada por analistas de dados e desenvolvedores. Maior flexibilidade na definição de herança no relacionamento entre tabelas. Obtém-se treinamentos de forma gratuitas na web de qualidade através do próprio site de instalação (POSTGRESQL.ORG, 2023).
+
+> Contras:  Todo o desenvolvimento do projeto só poderá ser realizado com o profissional DBA acompanhando o processo de instalação do Data Warehouse, um profissional capacitado em DBA é bem remunerado devida a responsabilidades e capacidades do profissional, sendo assim a empresa precisa desembolsar alguns recursos extras para a sua contratação. E ainda adquirir máquinas e hardwares que suportem a instalação clusters e nodes.
+
+>   Recursos:  Aquisição de computadores e toda a aparelhagem física juntamente com seus softwares para instalação de hackers. E contratação de profissionais em TI para habilitar o processo de instalação do Data Warehouse juntamente com o profissional DBA, habilitar e desenvolver o projeto de “web crawling” depois de toda a burocracia da instalação do PostgreSQL na empresa.
+
+* Teoria de suporte e autor 
+
+       André Milani (2008) PostgreSQL, afirma ser um excelente banco de dados com todas as características e propriedades necessárias para atender aos mais exigentes padrões de aplicações do mundo da informática (MILANI, 2008, p.26).
+Ferramenta encarregada de armazenar dados e gerenciar o acesso de cada informação de acordo com regras previamente definidas.                                                                                                                                   
+Felipe Nery Rodrigues Machado (2008) Aborda que o Data Warehouse é considerado por muitos autores como a evolução do gerenciamento empresarial à medida que a empresa aumentar seu porte e expansão, vai buscar ferramentas na qual perceba toda a extensão de sua empresa para tomar decisões mais assertivas em relação a provisionamento do futuro de seus investimentos (MACHADO RODRIGUES, Felipe 6°Edição).
+Define Date (2004), “O Sistema de Gerenciamento de Banco de Dados é o software que manipula todos os acessos e processos no Banco de Dados”. O SGBD é um software que funciona como interface entre o usuário e Banco de Dados, ou seja, todas as solicitações dos usuários, como criação de tabelas, inserção de dados, recuperação de dados, são manipuladas pelo SGBD. Após um banco de dados ter sido desenvolvido e estar em operação, o uso real das aplicações, das transações, das consultas e das visões revela fatores e áreas de problemas que podem não ter sido consideradas durante o projeto físico inicial. As informações de entrada para o projeto podem ser revisadas por meio da coleta de estatísticas reais sobre os padrões de uso (DATE, C.J.,2004).
+
+> Proposta B:  Implantação do Data Warehouse Amazon Redshift 
+    
+> Descrição da proposta:  Devido a sua versatilidade sendo muito bem-conceituada por seus usuários online e disponibilizar muitas ferramentas de apoio empresarial o software Amazon Redshift oferece alto valor para a empresa por ter um serviço que evolui em ritmo acelerado, tem oferecido bons resultados aos seus clientes atuais e futuros. Oferece a opção de ter vários cluters em nuvem isso aumenta elasticamente capacidade alterando o tamanho de cada cluster que pode ir escalonando para maior dependendo da necessidade da empresa, atua por meio de taxa de transferência por meio de escalonamento automático de vários clusters que adiciona remove-os automaticamente para lidar com altos picos de cargas de trabalho.
+A Redshift oferece soluções líderes de mercado desempenho do armazenamento de dados por meio de execução de consulta inovadora que combina operadores de dados em cada consulta através da geração de código de consulta, uma execução vetorizada, que melhoram ainda mais a eficiência escala linearmente ao processar alguns “terabytes” de dados para petabytes. E incorporou autonomia baseada em aprendizado de máquina, que ajusta cada cluster com base nas necessidades das cargas de trabalho do cliente, tecnologia muito requisitada no atual                                                                                                                                                                                                cenário “Business Intelligence”, no qual o “web crawling” está inserido nessa tecnologia.
+
+> Possíveis impactos: O melhoramento das previsões e lançamentos financeiros supervisionados por demanda, obtém-se compartilhamento de dados entre contas organizações e parceiros com maior fluidez e segurança enquanto cria aplicações com a base de dados de terceiros. Otimizar o “Business Intelligence”, com painéis e relatórios orientados por insights usando o Amazon “QuickSight”, o “Tableau”, o “Microsoft Power BI” ou outras ferramentas, isso permite a empresa mais versatilidade no uso das suas ferramentas de “BI”.
+E por fim obter acesso simplificado aos dados, ingestão e saída de várias linguagens de programação e plataforma sem configurar drivers e gerenciar conexões de banco de dados.
+
+> Prós:  Rapidez e fluidez no armazenamento, compartilhamento e estruturação de seus dados o Amazon Redshift faz parte do serviço de web oferecidos pela plataforma Amazon, e pode ser acessado diretamente na nuvem e opera com petabytes completamente gerenciado na nuvem, garante a empresa domínio e supervisão de seus dados. Permite maior robustez no seu banco de dados e menos desperdício de informações irrelevantes no sentido de utilização pelos setores da empresa envolvidos na instalação do Data Warehouse sendo eles: TI, Marketing, Designer, Financeiro e RH. Com serviço de computação em nuvem entrega recursos de TI sob demanda por meio de internet com definição de preço de pagamento conforme o uso, não é necessário adquirir datacenters e servidores físicos, a empresa pode acessar serviços de tecnologia, como capacidade computacional, armazenamento de banco de dados, conforme precisar, usando provedor em nuvem.
+
+> Contras:  O projeto precisa de profissional TI capacitado e especializado nos serviços AWS (Amazon Web Services), a ser contratado pela empresa tendo em vista que todos os profissionais envolvidos precisam ser treinados na plataforma, para dar continuidade ao projeto do Data Warehouse em futuras manutenções e atualizações, observo que esses serviços estão disponíveis apenas na Amazon Web Services que não oferece uma solução de várias nuvens, ocasionando o aumento dos custos do projeto. 
+> Recursos:  Aquisição de outros profissionais de TI precisa ser contratados para agregar no projeto de “web crawling”. Obter a licença junto a AWS pagando USD 0,25 por hora e pode ser aumentado a escala na vertical para “petabyte”, ou, a empresa pode provisionar pagando a instância sob demanda e pagar pelo banco de dados por hora sem compromisso de taxas iniciais ou escolher instâncias reservadas e economizar. Existem três tipos de serviços de computação em nuvem oferecidos pela AWS e cada uma tem seus níveis específicos de controle, flexibilidade e gerenciamento. São eles: Infraestrutura como serviço (IaaS), Plataforma como Serviço (PaaS), Software como Serviço (SaaS).
+
+> Teoria de suporte e autor 
+
+      Sigmod (2022) afirma que Amazon Redshift aumentou consideravelmente o desempenho e escalabilidade da ferramenta, como líderes do setor de Data Warehouse em nuvem, com várias inovações, como armazenamento gerenciado, escalonamento simultâneo no compartilhamento de dados. Ao mesmo tempo, o Amazon Redshift cresceu em facilidade de uso: Gerenciamento de carga de trabalho, otimização automatizada usando visualizações materializadas permitem desempenho superior de consultas prontas para uso. Além disso, o Redshift agora pode interagir com dados adicionais (semiestruturados, espaciais) e vários serviços de AWS criados para fins específicos, com núcleos de execução diferenciador, capacidade de escalar para dezenas de “petabytes”  de dados e milhares de usuários simultâneos, automações baseadas em ML que facilitam o uso e integração estreita com a amplos ecossistemas da AWS, o Amazon Redshift é a melhor solução para armazenamento de dados em nuvem; a inovação continua em ritmo acelerado (SIGMOD, 2016).
+      IppoKratis (2021) Em 2013, a Amazon Web Services revolucionou o setor de armazenamento de dados ao lançar o Amazon Redshift, o primeiro armazenamento empresarial em escala de “petabytes” totalmente gerenciado. Tornou simples e econômica a análise eficiente de grandes volumes de dados usando as ferramentas de inteligência de negócios existentes. Esse lançamento revolucionou o mercado de armazenamento de dados tendo em vista que o seu valor era bastante caro, e ferramentas pouco elásticas, e exigiam profissionais te TI com bastante experiência para ajusta e operar. Hoje a AWS oferece uma ampla variedade de serviços
+ingestão de “ELTing“de dados semiestruturados (por exemplo JSON) usando a extensão “PartiQL” do “SQL”. Os serviços específicos da AWS incluem o armazenamento de objetos Amazon S3, banco de dados transacionais (por exemplo, “DynamoDB” e Aurora e os serviços de ML do “Amazon Sagemaker” (IPPOKRATIS, Pandis, 2021).
+      
+3.2 Conexão da proposta com os resultados esperados
+
+	Segue abaixo um quadro com uma análise SWOT (Strenghts, Weaknesses, Opportunities, Threats), método de planejamento estratégico que analisa pontos críticos para uma implementação bem-sucedida. Conforme foram definidos os conteúdos, apresenta de forma resumida suas características mais importantes para auxiliar na tomada de decisão pela diretoria da empresa, as duas ferramentas vão ajudar muito na expansão e crescimento da empresa como um todo, mas é preciso optar em obter o PostgreSQL um Data Warehouse que tem toda sua estrutura agregada a parte física, e o Amazon Redshift com a sua estrutura em nuvem, porém, seus custos são baseados no uso da ferramenta, mas não precisa obter vários computadores para se acessar o cluster do “web crawling” da empresa (CHIAVENATO & ARÃO, 2004). 
+
+
+
+
+
+
+             Figura 6 – Análise SWOT 
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fonte: Elaborado pelo auto, 2023.                                                                                                                                      
+
+           Conforme demostra no quadro acima as avaliações pertinentes a cada ferramenta, que proporcionam maior segurança e apoio no momento da escolha, para sustentar os insights no momento da apresentação das propostas a diretoria, com seus devidos ganho e obstáculos a ser enfrentados com toda a transparência possível visando obter resultados engrandecedores no planejamento, e na definição dos seus planos como base nas ações com diferencial de inovação e crescimento. Objetivo da empresa ao busca integrar no seu portifólio algo novo e revolucionário no seu âmbito de atuação.
+
+
+
+
+
+
+
+
+
+
+
+
+
+4         PLANEJAMENTO
+
+	Assegurar-se que o projeto tenha boas condições de início, foram apresentadas todas os benefícios e consequências que as duas ferramentas tem a desempenhar na empresa em termos de desempenho e eficiência, logo, um projeto para ter total eficiência precisa de um bom planejamento, de modo que a empresa possa buscar vantagem competitiva embasada no tempo de execução das tarefas para acelerar seus processos diminuir seus gargalos e em seus processos decisórios ter maior qualidade para que tudo saia conforme o definido, optar com clareza qual setor a ser responsável em monitorar todos os procedimentos para que ocorra uma boa implementação de qual proposta for escolhida, e que alcance no tempo pré-definido nas ações, o êxitos nas atividades detalhadas a seguir, definida parte a parte a ser feito por sequência de instalação previas atualizações, configuração do sistema de Data Warehouse que traz para empresa inovação de ter a sua disposição dados coletados e armazenados de acordo com os padrões definidos pela da mesma e poderão ser acessados em “batch” ou “streaming” pelos profissionais do setor de TI, seja qual software a empresa optar.
+
+4.1      Planos de ações
+
+	Definição das etapas e de extrema importância na obtenção de bons resultados, segue abaixo a estrutura do plano de ações a ser seguido pela empresa. Sobre proposta A com implantação do software PostgreSQL e proposta B com implantação do Amazon Redshift com sua arquitetura híbrida ou em nuvem.   
+
+
+
+
+
+
+
+
+
+                                                                                                                                              
+Quadro 1 – Proposta de solução A: Implantação do Data Warehouse utilizando o software PostgreSQL
+
+Objetivo: Dar início a instalação e estruturação do Data Warehouse utilizando o PostgreSQL como ferramenta de armazenamento, análise e modelagem dos dados.
+Ação
+Detalhada
+Prazo para
+Finalização/Implantação
+Responsável (área/função)
+  Definir o líder e supervisor do projeto
+2 semanas após a aprovação do projeto
+   Área: Diretoria
+   Função: Diretor de TI
+   Elaborar o planejamento da Implantação
+  1 mês
+   Área: TI
+   Função: Lider TI
+  Definir os custos do projeto
+  2 meses
+   Área: Diretoria
+   Função: Diretor de TI
+  Definir os setores do projeto
+
+
+  2 meses
+   Área: TI
+   Função: Lider TI
+  Contração do DBA
+  1 semana
+   Area: TI
+   Função: Lider TI
+  Elaboração da arquitetura do DW
+  1 mês 
+   Área: TI
+   Função: DBA
+  Compra de computadores
+  1 mês
+   Área: Diretoria, TI
+Função: Diretor de TI, Lider de TI
+  Instalação do software e atualizações
+  1 mês
+   Área: TI
+   Função: DBA 
+  Testar o software com setores
+  15 dias
+   Área: TI
+   Função: DBA
+  Homologar o sistema
+  15 dias
+   Área: TI
+   Função: DBA
+  Apresentação do sistema aos gestores
+  1 semana
+   Area: TI
+   Função: Lider TI
+   Definir início do DW em produção
+  1 semana
+   Area: TI
+   Função: Lider TI
+  Acompanhamento da produção 
+  Definir Scripts
+  1 mês
+   Area: TI
+   Função: Lider TI
+   Treinamento com gestores responsáveis 
+  15 dias 
+   Área: TI
+   Função: DBA
+  Treinamento com setores 
+  15 dias
+   Área: TI
+   Função: DBA
+  Acompanhar a produção
+  15 dias
+   Área: TI
+   Função: DBA
+  Finalizar o projeto
+  1 dia
+   Area: TI
+   Função: Lider TI
+Fonte: Elaborado pelo autor, 2023
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                               
+
+Quadro 2 – Proposta de solução B: Implantação do Data Warehouse Amazon Redshift
+
+  Objetivo: Dar início a instalação e estruturação do Data Warehouse utilizando o      PostgreSQL como ferramenta de armazenamento, análise e modelagem dos dados.
+Ação
+Detalhada
+Prazo para
+Finalização/Implantação
+Responsável (área/função)
+  Definir o líder e supervisor do projeto
+2 semanas após a aprovação do projeto
+   Área: Diretoria
+   Função: Diretor de TI
+   Elaborar o planejamento da Implantação
+  1 mês
+   Área: TI
+   Função: Lider TI
+  Definir os custos do projeto
+  2 meses
+   Área: Diretoria
+   Função: Diretor de TI
+  Definir os setores do projeto
+
+
+  2 meses
+   Área: TI
+   Função: Lider TI
+  Contração do DBA
+  1 semana
+   Area: TI
+   Função: Lider TI
+  Elaboração da arquitetura do DW
+  1 mês 
+   Área: TI
+   Função: DBA
+  Compra de computadores (caso necessário)
+  1 mês
+   Área: Diretoria, TI
+Função: Diretor de TI, Lider de TI
+  Instalação do software e atualizações
+  1 mês
+   Área: TI
+   Função: DBA 
+  Testar o software com setores
+  15 dias
+   Área: TI
+   Função: DBA
+  Homologar o sistema
+  15 dias
+   Área: TI
+   Função: DBA
+  Apresentação do sistema aos gestores
+  1 semana
+   Area: TI
+   Função: Lider TI
+   Definir início do DW em produção
+  1 semana
+   Area: TI
+   Função: Lider TI
+  Acompanhamento da produção 
+  Definir Scripts
+  1 mês
+   Area: TI
+   Função: Lider TI
+   Treinamento com gestores responsáveis 
+  15 dias 
+   Área: TI
+   Função: DBA
+  Treinamento com setores 
+  15 dias
+   Área: TI
+   Função: DBA
+  Acompanhar a produção
+  15 dias
+   Área: TI
+   Função: DBA
+  Finalizar o projeto
+  1 dia
+   Area: TI
+   Função: Lider TI
+Fonte: Elaborado pelo autor, 2023
+
+
+
+
+
+
+                                                                                                                                                          
+5	CONSIDERAÇÕES FINAIS
+
+      	O referido projeto teve por intuito apresentar as melhores ferramentas disponíveis no mercado da tecnologia de softwares para implantação de Data Warehouse, como existem várias ferramentas, algumas foram escolhidas por senso comum e pesquisas realizadas, e, de acordo com suas características e importância apontando para os melhoramentos da empresa. Os benefícios que uso da arquitetura Data Warehouse traz com suas funcionalidades, a possibilidade de ter “petabytes “de armazenamento de dados, maior latência, integridade dos dados e por fim os custos, o que nesse sentido vai impactar a empresa de forma positiva.
+      Definida os recursos, chega o momento de optar por duas das mais interessantes, no sentido de atrair a empresa para algo encantador de forma a se adequar a proposta, o que de fato ela realmente vai obter de resultado, e mantê-la cada vez mais incluída no mercado da tecnologia em termos de avanço e informatização, pois ela já desenvolve seus próprios softwares. 
+      Este projeto obteve com satisfação apresentar a ferramentas para implantação de Data Warehouse, como instrumento de inovação, para colocar a empresa em posição de estar apta a concorrer em um mercado extremamente competitivo de constantes inovações, onde o mercado tecnológico disponibiliza ferramentas que podem alavancar o sucesso da empresa juntamente com profissionais capacitados e treinados para operar o Data Warehouse de forma concisa e suficiente.
+
+
+
+
+
+
+	
+
+
+
+
+
+FIM
+                                                                                                                                                                                                                                                                                                                                                                                
+REFERÊNCIAS
+
+ACERVO.LIMA, 2023 Disponível em:
+https://acervolima.com/as-15-principais-ferramentas-de-data-warehouse-populares/.
+Acesso em 27 fev. 2023.
+
+BLOG.INDICIUM. TECH, 2023 Disponível em: 
+https://blog.indicium.tech/http-blog-indicium-tech-data-warehouse-7-ferramentas-de-dw-que-sao-tendencia-para-2022-2/amp/?utm_source=Google&utm_medium=cpc&utm_term=&utm_campaign=19229929630&utm_content=&gclid=Cj0KCQiAo-yfBhD_ARIsANr56g4628H5FQlxf4bhyPOfu-duCP1Cj820cDE6tziRodmlLsD7ywwuWpAaAhlWEALw_wcB. Acesso em 27 fev. 2023.
+
+BENCK NUNES, Larissa Lourenço. Construção de um Data Warehouse aliado a uma ferramenta de Open Source Ireport na geração de informações de tomada de decisão. Orientador: Prof. Msc. Simone de Almeida. 2011. 89. TCC (Graduação) – Curso de Tecnologia em Análise e Desenvolvimento de Sistemas, Universidade Tecnológica Federal do Paraná, Ponta Grossa, 2011.
+
+CARNEIRO PINTO Alessandro, MOREIRA Juliano Lucas, CASTRO FREITAS1 André Luis.
+Tuning- Técnicas de Otimização de Banco de Dados Um Estudo Comparativo: Mysql e Potgresql. 2009. Graduação – Centro de Ciências Computacionais – Universidade Federal do Rio Grande (FURG), Rio Grande, 2009.
+
+DAVENPORT, T.H. e L. Prusak. Working Knowledge: how Organizations Manage what they Know. Boston: Harvard Business Scholl Press, 1998.      
+             
+DOCS.AWS.AMAZON.COM, 2023 Disponível em:
+https://docs.aws.amazon.com/pt_br/redshift/latest/dg/c_high_level_system_architecture.html. Acesso em 27 fev. 2023.
+
+                                                                                                                                                      
+DATE, C. J. Introdução a Sistemas de Bancos de Dados. Campus, Rio de Janeiro, 2004. Elmasri, R. E., & Navathe, S. (2006). Sistema de Banco de Dados. Pearson, São Paulo, 2005.
+
+FLAI, 2023. Disponível em: 
+https://www.flai.com.br/miltonassis/o-poder-dos-dados-conceito-e-sua-importancia-em-data-science/. Acesso em 23 fev. 2023.
+
+GOOGLE ACADÊMICO, 2023. Disponível em:
+https://onlinelibrary.wiley.com/doi/abs/10.1002/9780470592663.ch24. Acesso em 22 mar. 2023
+
+MACHADO RODRIGUES, Felipe Nery. Tecnologia e Projeto de Data Warehouse. [S.I]: Livros no Google Play, 6.ed. Disponível em:
+https://books.google.com.br/books?id=1YqwDwAAQBAJ&printsec=frontcover&hl=pt-BR&source=gbs_ge_summary_r&cad=0#v=onepage&q&f=false. Acesso em 18 fev. 2023.	
+ MILANI, André, PostgreSQL- Guia do Programador.
+Livros no Google Play, 2008. Novatec. Disponível em:
+https://books.google.com.br/books?hl=pt-BR&lr=&id=eb7fXbM70F4C&oi=fnd&pg=PA19&dq=implanta%C3%A7%C3%A3o+dos+postgresql&ots=FWgk1x-Lu-&sig=9JngDfgMVj7GOo-HKXZ9_L7vaHk#v=onepage&q=implanta%C3%A7%C3%A3o%20dos%20postgresql&f=true.
+Acesso em 14 mar.2023.
+
+ PORTUGUÊS.COM, 2023. Disponível em: 
+https://www.portugues.com.br/redacao/impessoalizacao-linguagem.html#:~:text=Isso%20pode%20ser%20feito%20por,casos%20de%20corrup%C3%A7%C3%A3o%20no%20pa%C3%ADs. Acesso em 23 fev. 2023.
+
+POSTGRESQL.ORG, 2023 Disponível em:
+https://www.postgresql.org/ Acesso em 14 mar. 2023
+	                                                                                                                  SAPIRO Arão, CHIANENATO Idalberto. Planejamento Estratégico: fundamentos e aplicações, Rio de Janeiro: Elsevier, 2004. Disponível em: https://books.google.com.br/books?hl=pt-BR&lr=&id=35awp0MOJ4C&oi=fnd&pg=PA1&dq=planejamento+&ots=6r7tBeTmZh&sig=UjRRidWKVJKfTmlEhnVz0-NIla4#v=onepage&q=planejamento&f=true. 
+Acesso em 22 de mar. 2023.
+
+SETZER W, Valdemar. Dado, Informação, Conhecimento e Competência, 2014. 14,15 Artigo (Graduação) – Depto. De Ciência da Computação, Universidade de São Paulo, 
+São Paulo, 2014. Disponível em:
+https://d1wqtxts1xzle7.cloudfront.net/44270487/ART_2_GEST-libre.pdf?1459454839=&response-content-disposition=inline%3B+filename%3DDado_Informacao_Conhecimento_e_Competenc.pdf&Expires=1677272475&Signature=ftS~eX4QtUbHbsI70adFKbP1MQYd-Me5WD7QODWnPjW54r-H0kkOWGlMyKSH4BqxCSuA4CPqrTgT5hCDh9UGGEpjpyWKvd5TEGnO3mD51HaMC0xmE0PzMfCWPQD3eMG4ZpgAmThQ~7J6-S-g2Jdm1-gbbHKjmGfYQYORMFobMc9cGW-mMMu-PQ6poW5AT9EXrcAE3JybT3F-Pr0PRsHRBbH-xPTII6JSzYkpLScn7QJMTnxzTB3dA3aWfkl-Mz8Fnx2oyGmxLcVkRPym0ni13DNAW4w0jYJWMhQMnXDmxgueXxvR904DkszfXDY~8A-HhOX-KkN0yHhu-ph4CIB7jg__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA. Acesso em 24 fev. 2023.
+
+SIGMOD, Amazon Redshfit Re-invented, 2022. 2016 Amazon Web Services, Philadelphia, USA, 2022 Disponível em: https://dl.acm.org/doi/pdf/10.1145/3514221.3526045, Acesso em 17 marc. 2023.
+
+
+
+
+
+                                                                                                                                                     
+
+
+Universidade Presbiteriana Mackenzie
+
+
+
+2
+
+
+
+
+
+
+
+
+
+Universidade Presbiteriana Mackenzie
+
+
+
+
+
+
+Universidade Presbiteriana Mackenzie
+
+
+
