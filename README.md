@@ -1,4 +1,4 @@
-# Ciencia de dados
+# Ciência de dados
 # Abragendo metodologias para implatação de Data Warehouse apartir de ferramentas de modelagem de Dados
 # Data WareHouse
 
