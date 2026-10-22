@@ -58,11 +58,42 @@ Registro das decisões tomadas ao longo do projeto: o que foi feito, por quê e 
 - **Resposta: sim, a população idosa cresceu.** No mundo, passou de 421 para 778 milhões de pessoas (de 6,8% para 9,7% da população). O número de idosos aumentou em 213 de 214 países (a exceção é o Lesoto, afetado pelo HIV/aids), e a fatia de idosos aumentou em 191 (89%).
 - Quem mais encolhe é quem mais envelhece: a mediana de idosos é de 20,4% nos que mais encolheram, contra 2,7% nos que mais cresceram.
 
-### Decisões adiadas
-- **Automação (pipeline diária):** fica para o final do projeto, quando soubermos exatamente o que rodar. Opções levantadas: GitHub Actions + Papermill (recomendada), agente agendado do Claude, Prefect ou Airflow, Kaggle Notebooks e o Agendador de Tarefas do Windows. Observação: com o CSV fixo, rodar todo dia gera sempre o mesmo resultado. A automação só faz sentido com uma fonte de dados que se atualiza ou como teste de que os notebooks continuam funcionando.
-- **Descrição do repositório no GitHub:** precisa ser atualizada manualmente, pela engrenagem do "About".
+### Merge na `main`
+- A branch `projeto-forecast` foi juntada na `main` por fast-forward (commit `5e35590`), sem conflitos: a `main` não tinha mudado desde a criação da branch. Antes da troca, a prévia do resultado foi revisada.
+- Depois do merge, as branches `projeto-forecast` (no GitHub e local) e `falha-forecast-2026-10-22` foram apagadas.
+
+### Etapa 6 — Automação (agente agendado do Claude)
+- **Ferramenta escolhida:** um agente agendado do Claude (routine na nuvem), e não GitHub Actions. Além de executar, o agente confere os resultados e explica o que mudou.
+- **Frequência:** quinzenal, nos **dias 1 e 15 de cada mês às 8h** (horário de Brasília; cron `0 11 1,15 * *` em UTC). O CSV principal é fixo e os dados do Banco Mundial mudam pouco, então rodar todo dia geraria quase sempre o mesmo resultado.
+- **Modelo:** `claude-sonnet-5-5`, no ambiente `Default`.
+- **Painel:** https://claude.ai/code/routines/trig_01CSxbMeYWTt3bn1ntT8wspv
+- **O que o agente faz:**
+  1. Clona a `main` e instala as bibliotecas.
+  2. Apaga o CSV de idosos para forçar o download atualizado do Banco Mundial.
+  3. Roda os notebooks 01 → 05 em ordem.
+  4. Confere os resultados: verificações dos notebooks, população mundial de 2030 entre 8,3 e 8,9 bi, anos novos ou revisões no Banco Mundial, e mudanças nos rankings.
+- **Regras de saída:**
+  - **Sem mudança nos dados:** não faz commit nem PR. Diferenças só de horário de execução ou de renderização dos PNGs não contam como mudança.
+  - **Dados novos:** cria a branch `atualizacao-forecast-AAAA-MM-DD`, registra aqui no histórico o "antes → depois" e abre um **PR para revisão**.
+  - **Falha:** cria a branch `falha-forecast-AAAA-MM-DD`, que só descreve o erro no histórico, e abre um PR, sem corrigir dados nem alterar notebooks.
+  - O agente nunca envia nada direto para a `main`.
+- **Configuração necessária:**
+  - conexão da conta do GitHub com o Claude (app do Claude instalado só no repositório `cienciadedados`);
+  - liberação de `api.worldbank.org` na rede do ambiente `Default`.
+- **Testes em 22/10/2026:**
+
+  | Teste | Resultado | Causa | Correção |
+  |---|---|---|---|
+  | 1º | ❌ O 05 falhou e o PR não foi aberto | Rede bloqueando o Banco Mundial; app sem permissão de escrita | Liberar o domínio; selecionar o repositório no app |
+  | 2º | ❌ O 05 falhou, mas o PR de falha #4 foi aberto | GitHub resolvido, rede ainda bloqueada | Liberar `api.worldbank.org` |
+  | 3º | ✅ "Sem mudanças nos dados" | Os 5 notebooks rodaram, 2030 = 8,600 bi e os dados do Banco Mundial estavam idênticos | — |
+
+  O PR #4 foi fechado sem merge, por ser apenas o registro de um teste.
+- **Primeira execução oficial:** 1º/11/2026 às 8h.
+
+### Pendências
+- **Descrição do repositório no GitHub:** atualizar manualmente, pela engrenagem do "About", porque ela ainda fala só de Data Warehouse.
 
 ## Próximos passos
-1. Gráficos do envelhecimento (opcional).
-2. Pull request da branch `projeto-forecast` para a `main`.
-3. Automação da pipeline.
+1. Acompanhar a primeira execução automática (1º/11) e revisar os PRs que o agente abrir.
+2. Gráficos do envelhecimento (opcional).
