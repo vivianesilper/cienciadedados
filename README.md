@@ -1,5 +1,10 @@
 # Ciência de dados
 # Abragendo metodologias para implatação de Data Warehouse apartir de ferramentas de modelagem de Dados
+
+## Projetos neste repositório
+- **Data Warehouse**: estudo de ferramentas e arquiteturas de Data Warehouse (abaixo)
+- **[Projeto Forecast](Projeto_Forecast/)**: previsão populacional por país com Python e pandas (em andamento)
+
 # Data WareHouse
 
  Define-se Data Warehouse, são repositórios centrais que armazenam dados de uma ou mais fontes heterogêneas. Armazéns de dados são ferramentas analíticas construídas para apoiar a tomada de decisões para usuários de relatórios em vários departamentos, o Data Warehouse torna-se uma biblioteca de informações que podem ser recuperadas e analisadas para uma melhor tomada de decisão. Trabalha para criar um sistema único e unificando os dados, como repositório central ele armazena os metadados. (ACERVO LIMA, 2022)
