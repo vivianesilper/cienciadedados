@@ -15,6 +15,8 @@ Previsão populacional por país a partir da base *World Population* (populaçõ
 - Método escolhido: tendência linear entre os dois últimos pontos observados (erro mediano de 1,75% no teste de 2022, contra 7,96% da previsão ingênua).
 - População mundial prevista: **8,05 bi em 2023**, **8,13 bi em 2024**, **8,21 bi em 2025**, **8,29 bi em 2026**, **8,37 bi em 2027** e **8,60 bi em 2030** (crescimento de ~0,95% ao ano).
 
+Decisões e histórico do projeto: [`HISTORICO.md`](HISTORICO.md).
+
 ## Dados
 
 - `data/world_population.csv`: base original (separador `;`)
