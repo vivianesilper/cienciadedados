@@ -66,3 +66,13 @@ Registro das decisões tomadas ao longo do projeto: o que foi feito, por quê e 
 1. Gráficos do envelhecimento (opcional).
 2. Pull request da branch `projeto-forecast` para a `main`.
 3. Automação da pipeline.
+
+## 2026-10-22 — Falha na atualização automática
+
+A execução quinzenal parou no `05_idosos.ipynb`. Os notebooks 01 a 04 rodaram sem erro. Nada foi corrigido nem alterado: esta branch contém apenas este registro.
+
+- **Notebook:** `05_idosos.ipynb`, célula que baixa os dados de 65+ da API do Banco Mundial (`https://api.worldbank.org/v2/country/all/indicator/{codigo}`), usada porque o arquivo `data/idosos_65mais_banco_mundial.csv` foi apagado antes da execução.
+- **Mensagem:** `URLError: <urlopen error Tunnel connection failed: 403 Forbidden>`.
+- **Causa provável:** o ambiente da execução automática bloqueia o acesso de saída a `api.worldbank.org` (política de rede do proxy). Um `curl` direto ao mesmo endereço também recebeu `403`. Não parece problema da API em si.
+- **Consequência:** `data/crescimento_e_idosos_2000_2022.csv` e o CSV do Banco Mundial não foram atualizados, então os rankings de idosos não puderam ser comparados. As verificações do passo 5 (previsão de 2030 e comparação dos CSVs) não foram concluídas.
+- **Para decidir:** liberar `api.worldbank.org` na política de rede do ambiente (Configurações do ambiente → acesso à rede) e rodar a rotina de novo.
