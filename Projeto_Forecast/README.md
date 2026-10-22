@@ -9,6 +9,8 @@ Previsão populacional por país a partir da base *World Population* (populaçõ
 | [`01_ingestao.ipynb`](01_ingestao.ipynb) | Carrega o CSV, inspeciona estrutura, nulos e duplicados |
 | [`02_limpeza.ipynb`](02_limpeza.ipynb) | Corrige `Density` e `Growth Rate`, padroniza colunas e exporta a base limpa |
 | [`03_forecast.ipynb`](03_forecast.ipynb) | Backtest de métodos (treino até 2015, teste em 2020/2022) e previsão por país ano a ano (2023–2027) e para 2030 |
+| [`04_graficos.ipynb`](04_graficos.ipynb) | Gráficos do histórico e das previsões (salvos em `figuras/`) |
+| [`05_idosos.ipynb`](05_idosos.ipynb) | Ranking de crescimento 2000–2022 cruzado com a população de 65+ do Banco Mundial |
 
 ## Resultados
 
@@ -17,12 +19,18 @@ Previsão populacional por país a partir da base *World Population* (populaçõ
 
 Decisões e histórico do projeto: [`HISTORICO.md`](HISTORICO.md).
 
+- **Idosos:** o número de pessoas com 65+ cresceu em 213 de 214 países de 2000 a 2022, e a fatia de idosos em 191 (89%). Os países que mais encolheram são os mais envelhecidos (mediana de 20,4% de idosos, contra 2,7% nos que mais cresceram).
+
+![População mundial](figuras/01_mundo.png)
+
 ## Dados
 
 - `data/world_population.csv`: base original (separador `;`)
 - `data/world_population_limpo.csv`: base tratada, gerada pelo `02_limpeza.ipynb`
 - `data/forecast_populacao.csv`: previsões para 2025 e 2030, geradas pelo `03_forecast.ipynb`
 - `data/forecast_anual_2022_2027.csv`: população e crescimento % ano a ano de 2022 (real) a 2027, gerada pelo `03_forecast.ipynb`
+- `data/idosos_65mais_banco_mundial.csv`: população com 65+ (pessoas e %) por país, 1970–2024, do Banco Mundial
+- `data/crescimento_e_idosos_2000_2022.csv`: crescimento populacional e de idosos por país, gerada pelo `05_idosos.ipynb`
 
 ## Como executar
 

@@ -47,11 +47,22 @@ Registro das decisões tomadas ao longo do projeto: o que foi feito, por quê e 
 - **Conferência:** a previsão de 2023 bate com a `taxa_crescimento` da própria base (diferença mediana de 0,17% por país). O total de 2030 está próximo da projeção da ONU (~8,5 bi).
 - **Saídas:** `data/forecast_populacao.csv` (2025 e 2030) e `data/forecast_anual_2022_2027.csv`.
 
+### Etapa 4 — Gráficos (`04_graficos.ipynb`)
+- Quatro gráficos em matplotlib, salvos em `figuras/`: população mundial, os 5 países mais populosos, crescimento por continente e as maiores variações até 2030.
+- Paleta validada para daltonismo, números no padrão brasileiro e textos em cinza (a cor fica só nas linhas e barras).
+
+### Etapa 5 — Crescimento e idosos (`05_idosos.ipynb`)
+- **Pergunta:** quais países mais cresceram e mais encolheram entre 2000 e 2022, e se a população idosa cresceu.
+- **Por que uma fonte externa:** a base original só tem a população total, sem divisão por idade. Os dados de 65+ vêm do Banco Mundial (`SP.POP.65UP.TO` e `SP.POP.65UP.TO.ZS`), ligados à base pelo código ISO3 (`cca3`). 214 dos 234 países e territórios têm dados.
+- **Ranking (países com 1 mi+):** os que mais cresceram foram o Catar (+317%) e os Emirados (+188%), por imigração de trabalhadores, e Níger, Angola e Chade, por natalidade alta. Os que mais encolheram foram Lituânia, Moldávia e Letônia (cerca de −23%), por emigração de jovens somada à baixa natalidade.
+- **Resposta: sim, a população idosa cresceu.** No mundo, passou de 421 para 778 milhões de pessoas (de 6,8% para 9,7% da população). O número de idosos aumentou em 213 de 214 países (a exceção é o Lesoto, afetado pelo HIV/aids), e a fatia de idosos aumentou em 191 (89%).
+- Quem mais encolhe é quem mais envelhece: a mediana de idosos é de 20,4% nos que mais encolheram, contra 2,7% nos que mais cresceram.
+
 ### Decisões adiadas
 - **Automação (pipeline diária):** fica para o final do projeto, quando soubermos exatamente o que rodar. Opções levantadas: GitHub Actions + Papermill (recomendada), agente agendado do Claude, Prefect ou Airflow, Kaggle Notebooks e o Agendador de Tarefas do Windows. Observação: com o CSV fixo, rodar todo dia gera sempre o mesmo resultado. A automação só faz sentido com uma fonte de dados que se atualiza ou como teste de que os notebooks continuam funcionando.
 - **Descrição do repositório no GitHub:** precisa ser atualizada manualmente, pela engrenagem do "About".
 
 ## Próximos passos
-1. Gráficos: série histórica com a previsão dos maiores países e o crescimento por continente.
+1. Gráficos do envelhecimento (opcional).
 2. Pull request da branch `projeto-forecast` para a `main`.
 3. Automação da pipeline.
