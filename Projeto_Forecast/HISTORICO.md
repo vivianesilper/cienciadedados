@@ -94,6 +94,19 @@ Registro das decisões tomadas ao longo do projeto: o que foi feito, por quê e 
 ### Pendências
 - **Descrição do repositório no GitHub:** atualizar manualmente, pela engrenagem do "About", porque ela ainda fala só de Data Warehouse.
 
+## 28/10/2026 — Exportação para o Power BI
+
+### Etapa 7 — Parquet para o Power BI (`06_powerbi.ipynb`)
+- **Formato:** Parquet em `data/powerbi/`, e não CSV. O Parquet guarda os tipos das colunas, é menor e o Power BI lê direto. Os CSVs das etapas anteriores continuam sendo gerados.
+- **Modelo estrela:** 2 dimensões (`dim_pais`, `dim_ano`) e 3 fatos (`fato_populacao`, `fato_idosos`, `fato_crescimento_idosos`), ligadas por `cca3` e `ano`.
+- **Formato longo:** histórico (1970–2022) e previsão (2023–2027 e 2030) ficam em uma única tabela, com a coluna `tipo`. Assim um só gráfico vai de 1970 a 2030.
+- **Agregados do Banco Mundial retirados** (Mundo, regiões, faixas de renda), para não somar em dobro. Foi criada a coluna `populacao_bm` (idosos ÷ %), que permite calcular o % de idosos de grupos de países de forma ponderada.
+- **Verificações no notebook:** chaves únicas, nenhum `cca3`/`ano` órfão e total mundial igual ao das etapas anteriores (7,973 bi em 2022; 8,600 bi em 2030).
+- **Guia do dashboard:** [`POWERBI.md`](POWERBI.md), com importação por parâmetro de pasta, relacionamentos, medidas DAX e 3 páginas sugeridas.
+- **Dependência nova:** `pyarrow`, usado para gravar Parquet.
+- **Automação:** o agente quinzenal passou a rodar também o `06_powerbi.ipynb`. Mudanças nos Parquet acompanham as dos CSVs e, sozinhas, não contam como dado novo.
+
 ## Próximos passos
 1. Acompanhar a primeira execução automática (1º/11) e revisar os PRs que o agente abrir.
-2. Gráficos do envelhecimento (opcional).
+2. Montar o dashboard no Power BI seguindo o [`POWERBI.md`](POWERBI.md).
+3. Gráficos do envelhecimento (opcional).
