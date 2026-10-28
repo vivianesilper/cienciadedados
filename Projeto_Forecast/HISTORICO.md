@@ -104,6 +104,7 @@ Registro das decisões tomadas ao longo do projeto: o que foi feito, por quê e 
 - **Verificações no notebook:** chaves únicas, nenhum `cca3`/`ano` órfão e total mundial igual ao das etapas anteriores (7,973 bi em 2022; 8,600 bi em 2030).
 - **Guia do dashboard:** [`POWERBI.md`](POWERBI.md), com importação por parâmetro de pasta, relacionamentos, medidas DAX e 3 páginas sugeridas.
 - **Dependência nova:** `pyarrow`, usado para gravar Parquet.
+- **Tema de cores:** `tema_forecast.json`, com uma paleta categórica de 8 cores em ordem segura para daltonismo, uma escala divergente vermelho → cinza → azul para o mapa de variação, cores de status reservadas para KPIs e fundo cinza claro. As instruções estão na seção 6 do `POWERBI.md`.
 - **Automação:** o agente quinzenal passou a rodar também o `06_powerbi.ipynb`. Mudanças nos Parquet acompanham as dos CSVs e, sozinhas, não contam como dado novo.
 
 ## Próximos passos

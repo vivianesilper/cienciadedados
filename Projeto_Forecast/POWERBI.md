@@ -119,3 +119,43 @@ Formatos: `População*` e `Idosos 65+` como número inteiro com separador de mi
 - **Dica de ferramenta** no mapa e na dispersão, com `População 2022`, `População 2030` e `% Idosos 2022`.
 - **Sincronizar segmentações** (Exibir → Sincronizar segmentações), para o filtro de continente valer em todas as páginas.
 - Uma caixa de texto com a fonte: *World Population e Banco Mundial (SP.POP.65UP.TO); previsão: tendência linear entre os dois últimos pontos*.
+
+## 6. Tema de cores
+
+O arquivo [`tema_forecast.json`](tema_forecast.json) aplica a paleta do projeto a todo o relatório. Para usá-lo, vá em **Exibir → Temas → Procurar temas** e escolha o arquivo.
+
+O que o tema define:
+
+| Elemento | Cor | Uso |
+|---|---|---|
+| Fundo da página | `#f3f2ef` (cinza claro) | Os visuais em branco se destacam do fundo |
+| Texto | `#0b0b0b` / `#52514e` | Títulos em preto, rótulos em cinza escuro |
+| Série 1 | `#2a78d6` azul | |
+| Série 2 | `#eb6834` laranja | |
+| Série 3 | `#1baf7a` verde-água | |
+| Série 4 | `#eda100` amarelo | |
+| Série 5 | `#e87ba4` rosa | |
+| Série 6 | `#008300` verde | |
+| Divergente | vermelho `#c23a3a` → cinza `#f0efec` → azul `#1c5cab` | Mapa de variação: vermelho encolhe, cinza ≈ 0, azul cresce |
+| Bom / neutro / ruim | `#0ca30c` / `#fab219` / `#d03b3b` | Só para indicadores (KPI), nunca para séries |
+
+A ordem das séries foi escolhida para que cores vizinhas continuem distinguíveis por quem tem daltonismo. Por isso, use-as na ordem, sem pular cores.
+
+### Cores fixas por continente
+
+O Power BI distribui as cores pela ordem em que as categorias aparecem. Assim, se um filtro tirar um continente, os outros mudam de cor. Para cada continente manter sempre a mesma cor, defina-as uma vez em cada visual com legenda de continente (**Formatar → Cores**):
+
+| Continente | Cor |
+|---|---|
+| Africa | `#2a78d6` azul |
+| Asia | `#eb6834` laranja |
+| Europe | `#1baf7a` verde-água |
+| North America | `#eda100` amarelo |
+| Oceania | `#e87ba4` rosa |
+| South America | `#008300` verde |
+
+### Dicas de uso
+- **Histórico × previsão:** use a mesma cor nas duas linhas (azul), com a da previsão **tracejada**. A legenda e o traço já mostram a diferença.
+- **Mapa:** em **Formatar → Cores de preenchimento → fx**, escolha *Gradiente*, ative *Adicionar uma cor intermediária* e defina o centro como **0**. Assim, o zero fica cinza, os países que crescem ficam azuis e os que encolhem, vermelhos.
+- **Dispersão por continente:** com 6 cores no mesmo gráfico, algumas ficam parecidas (por exemplo, amarelo e laranja). Ative os **rótulos de categoria** nos pontos de destaque e deixe a segmentação de continente à mão, para isolar um grupo.
+- **Rótulos:** o amarelo, o rosa e o verde-água têm pouco contraste com o fundo branco. Em barras com essas cores, mostre os valores como rótulos de dados, e não só pela cor.
