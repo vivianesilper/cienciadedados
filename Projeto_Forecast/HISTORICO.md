@@ -107,6 +107,18 @@ Registro das decisões tomadas ao longo do projeto: o que foi feito, por quê e 
 - **Tema de cores:** `tema_forecast.json`, com uma paleta categórica de 8 cores em ordem segura para daltonismo, uma escala divergente vermelho → cinza → azul para o mapa de variação, cores de status reservadas para KPIs e fundo cinza claro. As instruções estão na seção 6 do `POWERBI.md`.
 - **Automação:** o agente quinzenal passou a rodar também o `06_powerbi.ipynb`. Mudanças nos Parquet acompanham as dos CSVs e, sozinhas, não contam como dado novo.
 
+## 2026-11-15 — Falha na atualização automática
+
+- **Onde falhou:** `05_idosos.ipynb`, na célula que baixa os dados de 65+ do Banco Mundial (`urllib.request.urlopen` em `https://api.worldbank.org/v2/country/all/indicator/...`).
+- **Mensagem:**
+  - 1ª tentativa: `TimeoutError: The read operation timed out`.
+  - 2ª tentativa: `urllib.error.HTTPError: HTTP Error 502: Bad Gateway`.
+  - Um `curl` direto à API também devolveu HTTP 502.
+- **Causa provável:** a API do Banco Mundial estava fora do ar ou instável (erro 502 vindo do próprio servidor, depois da liberação da rede, que já tinha sido resolvida). Não é erro de lógica dos notebooks.
+- **O que rodou:** os notebooks 01 a 04 executaram sem erro. O 05 falhou, e por isso o 06 não pôde rodar (faltava `data/idosos_65mais_banco_mundial.csv`, apagado para forçar o download).
+- **Ação tomada:** nenhuma alteração em dados ou notebooks. O CSV do Banco Mundial da `main` foi mantido, e esta branch só traz este registro.
+- **Decisão para a usuária:** rodar a pipeline de novo mais tarde (ou disparar a automação manualmente), quando a API voltar.
+
 ## Próximos passos
 1. Acompanhar a primeira execução automática (1º/11) e revisar os PRs que o agente abrir.
 2. Montar o dashboard no Power BI seguindo o [`POWERBI.md`](POWERBI.md).
